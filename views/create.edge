@@ -1,0 +1,59 @@
+@layout('layouts.app')
+
+@section('content')
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('/assets/img/create.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>creat new post</h1>
+                    <span class="subheading">new post?</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Page From-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form action="/post/store" method="POST" enctype="multipart/form-data">
+                <div class="control-group">
+                    <div class="form-floating">
+                        <input class="form-control" id="username" type="text" name="username" placeholder="Username" data-sb-validations="required"/>
+                        <label for="username">Username</label>
+                        <div class="invalid-feedback" data-sb-feedback="username:required">A Username is required.</div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-floating">
+                        <input type="text" name="title" placeholder="Title" class="form-control">
+                        <label for="title">Title</label>
+                        <div class="invalid-feedback" data-sb-feedback="title:required">A Title is required.</div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-floating">
+                        <input type="text" name="subtitle" placeholder="subtitle" class="form-control">
+                        <label for="subtitle">Subtitle</label>
+                        <div class="invalid-feedback" data-sb-feedback="subtitle:required">A Subtitle is required.</div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-floating">
+                        <textarea name="content" placeholder="content" cols="30" rows="10" class="form-control"></textarea>
+                        <label>Content</label>
+                    </div>
+                </div>
+                <div class="form-group mt-5">
+                    <input type="file" name="image" class="form-control-file">
+                </div>
+                <div class="form-group my-4 text-center">
+                    <button class="btn btn-primary">create Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endsection
